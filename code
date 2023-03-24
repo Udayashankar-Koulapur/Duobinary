@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,j,n,msg[50],x,sum=0,diff=0;
+    printf("Enter the number of bits: ");
+    scanf("%d",&n);
+    printf("Enter the message bits: ");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&msg[i]);
+    }
+    printf("Message bits in polar form: ");
+    for(i=0;i<n;i++)
+    {
+        if (msg[i]==0)
+        {
+           msg[i]=-1;
+           printf("%d ",msg[i]);
+        }
+        else
+        {
+           msg[i]=1;
+           printf("%d ",msg[i]);
+        }
+    }
+    printf("\nSum of consecutive terms: ");
+    for(i=0;i<n-1;i++)
+    {
+        sum=msg[i]+msg[i+1];    
+        printf("%d ",sum);
+    }
+    printf("\nSubtarction: ");
+    for(i=0;i<n;i++)
+    {
+        diff=msg[i]-msg[i+1];
+        printf("%d ",msg[i]);
+    }
+    printf("\nDecoded message bits: ");
+    for(i=0;i<n;i++)
+    {
+        if(msg[i]==-1)
+        {
+            msg[i]=0;
+            printf("%d ",msg[i]);
+        }
+        else
+        {
+            msg[i]=1;
+            printf("%d ",msg[i]);
+        }
+    }
+
+    return 0;
+}
